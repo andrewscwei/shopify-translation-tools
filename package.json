@@ -4,7 +4,7 @@
   "description": "Scripts for fetching and creating translatable resources using the Shopify Translation API",
   "main": "build/index.js",
   "scripts": {
-    "dev": "DEBUG=app* ts-node -r dotenv/config src",
+    "mutations": "DEBUG=app* ts-node -r dotenv/config src",
     "clean": "rimraf build",
     "build": "npm run clean && tsc",
     "test": "mocha --timeout 10000 --reporter spec --full-trace --colors --recursive --exit build/**/*.spec.js",
