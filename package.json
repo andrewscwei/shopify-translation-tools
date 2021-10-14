@@ -1,0 +1,52 @@
+{
+  "name": "shopify-translation-tools",
+  "version": "0.1.0",
+  "description": "Scripts for fetching and creating translatable resources using the Shopify Translation API",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "DEBUG=app* ts-node -r dotenv/config src",
+    "clean": "rimraf build",
+    "build": "npm run clean && tsc",
+    "test": "mocha --timeout 10000 --reporter spec --full-trace --colors --recursive --exit build/**/*.spec.js",
+    "test:ts": "mocha -r ts-node/register --timeout 10000 --reporter spec --full-trace --colors --recursive --exit src/**/*.spec.ts",
+    "lint": "eslint --ext .ts src",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewscwei/shopify-translation-util.git"
+  },
+  "keywords": [
+    "shopify",
+    "translation",
+    "admin",
+    "graphql"
+  ],
+  "author": "Andrew Wei <andrewscwei@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewscwei/shopify-translation-util/issues"
+  },
+  "homepage": "https://github.com/andrewscwei/shopify-translation-util#readme",
+  "files": [
+    "build",
+    "index.d.ts"
+  ],
+  "dependencies": {
+    "debug": "^4.3.2",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.7",
+    "@types/lodash": "^4.14.175",
+    "@types/mocha": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^8.0.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.3.0",
+    "typescript": "4.4.4"
+  },
+  "types": "build/index.d.ts"
+}
