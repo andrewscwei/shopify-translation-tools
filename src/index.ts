@@ -84,7 +84,9 @@ function writeMutationsToFile(mutations: ResourceTranslationMutations[], file = 
 }
 
 const resources = getTranslatableResourcesFromFile(process.argv[2])
-const mutations = generateMutations(resources, { targetLocale: 'fr', skipTranslated: true })
+const mutations = generateMutations(resources, { targetLocale: 'fr', skipTranslated: false })
 const written = writeMutationsToFile(mutations, process.argv[3])
 
 debug(written)
+
+debug(`Successfully generated mutations for ${resources.length} translatable resources`)
